@@ -30,6 +30,11 @@ export default function Tabela(props) {
     prioridadeFs +
     prioridadeLing;
 
+  //calculo blocos de 50min
+  var horas_minutos = props.tempoSemana * 60
+  var blocos_50min = horas_minutos / 50
+  
+  
   //calculo final de horas por matéria
   var tempoMat = prioridadeMat * (props.tempoSemana / prioridadeTotal);
   var tempoMatFinal = tempoMat.toFixed(2);
@@ -91,37 +96,77 @@ export default function Tabela(props) {
   var horasLing = segundosLing / 3600;
   var horasLingFinal = Math.trunc(horasLing);
 
-  //calculo de minutos Matematica
+  //calculo de minutos Matematica - nao é minutos total
   var minutosMat = (segundosMat - 3600 * horasMatFinal) / 60;
   var minutosMatFinal = Math.round(minutosMat);
+  
+  //calculo minutos total Matemática
+  var minutosMat2 = horasMatFinal * 60
+  var blocosMat = Math.round(minutosMat2 / 50)
+
 
   //calculo de minutos Biologia
   var minutosBio = (segundosBio - 3600 * horasBioFinal) / 60;
   var minutosBioFinal = Math.round(minutosBio);
 
+  //calculo minutos total Biologia
+  var minutosBio2 = horasBioFinal * 60
+  var blocosBio = Math.round(minutosBio2 / 50)
+
+
   //calculo de minutos Quimica
   var minutosQuim = (segundosQuim - 3600 * horasQuimFinal) / 60;
   var minutosQuimFinal = Math.round(minutosQuim);
+
+  //calculo minutos total Quimica
+  var minutosQuim2 = horasQuimFinal * 60
+  var blocosQuim = Math.round(minutosQuim2 / 50)
+
 
   //calculo de minutos Fisica
   var minutosFis = (segundosFis - 3600 * horasFisFinal) / 60;
   var minutosFisFinal = Math.round(minutosFis);
 
+  //calculo minutos total Fisica
+  var minutosFis2 = horasFisFinal * 60
+  var blocosFis = Math.round(minutosFis2 / 50)
+
+
   //calculo de minutos Historia
   var minutosHis = (segundosHis - 3600 * horasHisFinal) / 60;
   var minutosHisFinal = Math.round(minutosHis);
+
+  //calculo minutos total Historia
+  var minutosHis2 = horasHisFinal * 60
+  var blocosHis = Math.round(minutosHis2 / 50)
+
 
   //calculo de minutos Geografia
   var minutosGeo = (segundosGeo - 3600 * horasGeoFinal) / 60;
   var minutosGeoFinal = Math.round(minutosGeo);
 
+  //calculo minutos total Geografia
+  var minutosGeo2 = horasGeoFinal * 60
+  var blocosGeo = Math.round(minutosGeo2 / 50)
+
+
   //calculo de minutos Filosofia e Sociologia
   var minutosFs = (segundosFs - 3600 * horasFsFinal) / 60;
   var minutosFsFinal = Math.round(minutosFs);
 
-  //calculo de minutos Lnuagens
+  //calculo minutos total Filosofia e Sociologia
+  var minutosFs2 = horasFsFinal * 60
+  var blocosFs = Math.round(minutosFs2 / 50)
+
+
+  //calculo de minutos Linguagens
   var minutosLing = (segundosLing - 3600 * horasLingFinal) / 60;
   var minutosLingFinal = Math.round(minutosLing);
+
+  //calculo minutos total Linguagens
+  var minutosLing2 = horasLingFinal * 60
+  var blocosLing = Math.round(minutosLing2 / 50)
+
 
   return (
     <div>
@@ -187,6 +232,7 @@ export default function Tabela(props) {
             </table>
           </div>
           <div>
+            <h2>número de Blocos de 50min de estudo: {Math.round(blocos_50min)}</h2>
             <table>
               <tr>
                 <td>&nbsp;</td>
@@ -198,9 +244,20 @@ export default function Tabela(props) {
               </tr>
               <tr>
                 <th>Matemática</th>
+                <th>{Math.round(blocosMat / 5)}</th>
+                <th>{Math.round(blocosMat / 5)}</th>
+                <th>{Math.round(blocosMat / 5)}</th>
+                <th>{Math.round(blocosMat / 5)}</th>
+                <th>{Math.round(blocosMat / 5)}</th>
               </tr>
               <tr>
                 <th>Biologia</th>
+                <th>{blocosBio / 3}</th>
+                <th>-</th>
+                <th>{Math.round(blocosBio / 3)}</th>
+                <th>-</th>
+                <th>{Math.round(blocosBio / 3)}</th>
+
               </tr>
               <tr>
                 <th>Química</th>
