@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Cronograma de estudos Enemtoria</h1>
+      <h1>Cronograma de estudos Enem</h1>
       <h2>Preencha os campos abaixo</h2>
       <h3>Meu nível de dificuldade para cada matéria (preencha de 1 a 3)</h3>
 
