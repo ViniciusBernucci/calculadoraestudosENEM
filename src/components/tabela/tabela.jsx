@@ -102,7 +102,7 @@ export default function Tabela(props) {
   
   //calculo minutos total Matemática
   var minutosMat2 = horasMatFinal * 60
-  var blocosMat = Math.round(minutosMat2 / 50)
+  var blocosMat = Math.ceil(minutosMat2 / 50)
 
 
   //calculo de minutos Biologia
@@ -111,7 +111,7 @@ export default function Tabela(props) {
 
   //calculo minutos total Biologia
   var minutosBio2 = horasBioFinal * 60
-  var blocosBio = Math.round(minutosBio2 / 50)
+  var blocosBio = Math.ceil(minutosBio2 / 50)
 
 
   //calculo de minutos Quimica
@@ -120,7 +120,7 @@ export default function Tabela(props) {
 
   //calculo minutos total Quimica
   var minutosQuim2 = horasQuimFinal * 60
-  var blocosQuim = Math.round(minutosQuim2 / 50)
+  var blocosQuim = Math.ceil(minutosQuim2 / 50)
 
 
   //calculo de minutos Fisica
@@ -129,7 +129,7 @@ export default function Tabela(props) {
 
   //calculo minutos total Fisica
   var minutosFis2 = horasFisFinal * 60
-  var blocosFis = Math.round(minutosFis2 / 50)
+  var blocosFis = Math.ceil(minutosFis2 / 50)
 
 
   //calculo de minutos Historia
@@ -138,7 +138,11 @@ export default function Tabela(props) {
 
   //calculo minutos total Historia
   var minutosHis2 = horasHisFinal * 60
-  var blocosHis = Math.round(minutosHis2 / 50)
+  var blocosHis = Math.ceil(minutosHis2 / 50)
+  console.log(tempoHisFinal)
+  console.log(minutosHis2)
+  console.log(blocosHis)
+  console.log(horasHisFinal)
 
 
   //calculo de minutos Geografia
@@ -147,7 +151,7 @@ export default function Tabela(props) {
 
   //calculo minutos total Geografia
   var minutosGeo2 = horasGeoFinal * 60
-  var blocosGeo = Math.round(minutosGeo2 / 50)
+  var blocosGeo = Math.ceil(minutosGeo2 / 50)
 
 
   //calculo de minutos Filosofia e Sociologia
@@ -156,7 +160,7 @@ export default function Tabela(props) {
 
   //calculo minutos total Filosofia e Sociologia
   var minutosFs2 = horasFsFinal * 60
-  var blocosFs = Math.round(minutosFs2 / 50)
+  var blocosFs = Math.ceil(minutosFs2 / 50)
 
 
   //calculo de minutos Linguagens
@@ -165,7 +169,7 @@ export default function Tabela(props) {
 
   //calculo minutos total Linguagens
   var minutosLing2 = horasLingFinal * 60
-  var blocosLing = Math.round(minutosLing2 / 50)
+  var blocosLing = Math.ceil(minutosLing2 / 50)
 
 
   return (
@@ -236,46 +240,76 @@ export default function Tabela(props) {
             <table>
               <tr>
                 <td>&nbsp;</td>
-                <th>Segunda</th>
-                <th>Terça</th>
-                <th>Quarta</th>
-                <th>Quinta</th>
-                <th>Sexta</th>
+                <th>Seg</th>
+                <th>Ter</th>
+                <th>Qua</th>
+                <th>Qui</th>
+                <th>Sexceil</th>
               </tr>
               <tr>
                 <th>Matemática</th>
-                <th>{Math.round(blocosMat / 5)}</th>
-                <th>{Math.round(blocosMat / 5)}</th>
-                <th>{Math.round(blocosMat / 5)}</th>
-                <th>{Math.round(blocosMat / 5)}</th>
-                <th>{Math.round(blocosMat / 5)}</th>
+                <th>{Math.ceil(blocosMat / 5)}</th>
+                <th>{Math.ceil(blocosMat / 5)}</th>
+                <th>{Math.ceil(blocosMat / 5)}</th>
+                <th>{Math.ceil(blocosMat / 5)}</th>
+                <th>{Math.ceil(blocosMat / 5)}</th>
               </tr>
               <tr>
                 <th>Biologia</th>
-                <th>{blocosBio / 3}</th>
+                <th>{Math.ceil(blocosBio / 3)}</th>
                 <th>-</th>
-                <th>{Math.round(blocosBio / 3)}</th>
+                <th>{Math.ceil(blocosBio / 3)}</th>
                 <th>-</th>
-                <th>{Math.round(blocosBio / 3)}</th>
+                <th>{Math.ceil(blocosBio / 3)}</th>
 
               </tr>
               <tr>
                 <th>Química</th>
+                <th>{Math.ceil(blocosQuim / 3)}</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosQuim / 3)}</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosQuim / 3)}</th>
               </tr>
               <tr>
                 <th>Física</th>
+                <th>{Math.ceil(blocosFis / 3)}</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosFis / 3)}</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosFis / 3)}</th>
               </tr>
               <tr>
                 <th>História</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosHis / 2)}</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosHis / 2)}</th>
+                <th>-</th>
               </tr>
               <tr>
                 <th>Geografia</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosGeo / 2)}</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosGeo / 2)}</th>
+                <th>-</th>
               </tr>
               <tr>
                 <th>Fil/Soc</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosFs / 2)}</th>
+                <th>-</th>
+                <th>{Math.ceil(blocosFs / 2)}</th>
+                <th>-</th>
               </tr>
               <tr>
                 <th>Linguagens</th>
+                <th>{Math.ceil(blocosLing / 2)}</th>
+                <th>{Math.ceil(blocosLing / 2)}</th>
+                <th>{Math.ceil(blocosLing / 2)}</th>
+                <th>{Math.ceil(blocosLing / 2)}</th>
+                <th>-</th>
               </tr>
             </table>
           </div>{" "}
