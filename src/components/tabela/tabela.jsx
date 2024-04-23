@@ -139,6 +139,8 @@ export default function Tabela(props) {
   //calculo minutos total Historia
   var minutosHis2 = horasHisFinal * 60
   var blocosHis = Math.ceil(minutosHis2 / 50)
+  
+  
   console.log(tempoHisFinal)
   console.log(minutosHis2)
   console.log(blocosHis)
@@ -244,7 +246,7 @@ export default function Tabela(props) {
                 <th>Ter</th>
                 <th>Qua</th>
                 <th>Qui</th>
-                <th>Sexceil</th>
+                <th>Sex</th>
               </tr>
               <tr>
                 <th>Matemática</th>
