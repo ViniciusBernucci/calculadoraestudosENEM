@@ -104,10 +104,6 @@ export default function Tabela(props) {
   var minutosMat2 = horasMat * 60
   var blocosMat = minutosMat2 / 50
 
-  console.log (horasMat)
-  console.log (blocosMat)
-
-
   //calculo de minutos Biologia
   var minutosBio = (segundosBio - 3600 * horasBioFinal) / 60;
   var minutosBioFinal = Math.round(minutosBio);
@@ -254,20 +250,20 @@ export default function Tabela(props) {
               </tr>
               <tr>
                 <th>Biologia</th>
-                <th>{Math.ceil(blocosBio / 3)}</th>
+                <th>{Math.round(blocosBio / 3)}</th>
                 <th>-</th>
-                <th>{Math.ceil(blocosBio / 3)}</th>
+                <th>{Math.round(blocosBio / 3)}</th>
                 <th>-</th>
-                <th>{Math.ceil(blocosBio / 3)}</th>
+                <th>{Math.round(blocosBio / 3)}</th>
 
               </tr>
               <tr>
                 <th>Química</th>
-                <th>{Math.ceil(blocosQuim / 3)}</th>
+                <th>{Math.round(blocosQuim / 3)}</th>
                 <th>-</th>
-                <th>{Math.ceil(blocosQuim / 3)}</th>
+                <th>{Math.round(blocosQuim / 3)}</th>
                 <th>-</th>
-                <th>{Math.ceil(blocosQuim / 3)}</th>
+                <th>{Math.round(blocosQuim / 3)}</th>
               </tr>
               <tr>
                 <th>Física</th>
