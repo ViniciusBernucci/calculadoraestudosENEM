@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Tabela from "./components/tabela/tabela";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 export default function App() {
   // Dificuldade por materia do aluno
@@ -17,82 +19,122 @@ export default function App() {
   const [tempo, setTempo] = useState(0);
   var tempoSemana = parseInt(tempo);
 
-  const [click, setClick] = useState (null)
-
+  const [click, setClick] = useState(null);
 
   return (
     <div className="App">
-      <h1>Cronograma de estudos Enem</h1>
-      <h2>Preencha os campos abaixo</h2>
-      <h3>Meu nível de dificuldade para cada matéria (preencha de 1 a 3)</h3>
+      <h1>Crie abaixo o seu cronograma de estudos para o Enem</h1>
+      <p>
+        Preencha os campos abaixo com o seu nível de dificuldade para cada
+        matéria (preencha de 1 a 3 sendo 1 = Não tenho dificuldade, 2 = Tenho
+        pouca dificuldade e 3 = Tenho dificuldade)
+      </p>
 
       <section>
-        <select name="matematica" onChange={(e) => setMat(e.target.value)}>
+        Matemática
+        <Form.Select
+          size="sm"
+          arial-label=" Default select"
+          name="matematica"
+          onChange={(e) => setMat(e.target.value)}
+        >
           <option>-</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-        </select>
-        Matemática<br></br>
-        <select name="biologia" onChange={(e) => setBio(e.target.value)}>
+        </Form.Select>
+        <br></br>
+        Biologia
+        <Form.Select
+          size="sm"
+          arial-label=" Default select"
+          name="biologia"
+          onChange={(e) => setBio(e.target.value)}
+        >
           <option>-</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-        </select>
-        Biologia<br></br>
-        <select name="quimica" onChange={(e) => setQui(e.target.value)}>
+        </Form.Select>
+        <br></br>
+        Qímica
+        <Form.Select
+          size="sm"
+          arial-label=" Default select"
+          name="quimica"
+          onChange={(e) => setQui(e.target.value)}
+        >
           <option>-</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-        </select>
-        Química<br></br>
-        <select name="fisica" onChange={(e) => setFis(e.target.value)}>
+        </Form.Select>
+        <br></br>
+        Física
+        <Form.Select
+          size="sm"
+          arial-label=" Default select"
+          name="fisica"
+          onChange={(e) => setFis(e.target.value)}
+        >
           <option>-</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-        </select>
-        Física<br></br>
-        <select name="historia" onChange={(e) => setHis(e.target.value)}>
+        </Form.Select>
+        <br></br>
+        História
+        <Form.Select name="historia" onChange={(e) => setHis(e.target.value)}>
           <option>-</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-        </select>
-        História<br></br>
-        <select name="Geografia" onChange={(e) => setGeo(e.target.value)}>
+        </Form.Select>
+        <br></br>
+        Geografia
+        <Form.Select name="Geografia" onChange={(e) => setGeo(e.target.value)}>
           <option>-</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-        </select>
-        Geografia<br></br>
-        <select name="filosofia" onChange={(e) => setFil(e.target.value)}>
+        </Form.Select>
+        <br></br>
+        Filosofia/Sociologia
+        <Form.Select name="filosofia" onChange={(e) => setFil(e.target.value)}>
           <option>-</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-        </select>
-        Filosofia/Sociologia<br></br>
-        <select name="linguagens" onChange={(e) => setLin(e.target.value)}>
+        </Form.Select>
+        <br></br>
+        Linguagens
+        <Form.Select name="linguagens" onChange={(e) => setLin(e.target.value)}>
           <option>-</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-        </select>
-        Linguagens<br></br>
+        </Form.Select>
+        <br></br>
       </section>
-      
+
       <div>
         <h3>Quantas horas de estudo você possui por semana?</h3>
-        <input onChange={(e) => setTempo(e.target.value)}></input>
+        <InputGroup className="mb-3">
+          <InputGroup.Text
+            as="textarea"
+            aria
+            label="with textarea"
+            size="lg"
+            onChange={(e) => setTempo(e.target.value)}
+          ></InputGroup.Text>
+        </InputGroup>
       </div>
 
-      <div><Button variant= "primary" onClick={setClick}>Calcular</Button></div>
-
-      
+      <div>
+        <Button variant="primary" onClick={setClick}>
+          Calcular
+        </Button>
+      </div>
 
       <Tabela
         mat={mat}

@@ -1,6 +1,5 @@
-import Button from 'react-bootstrap/Button';
-import Table from 'react-bootstrap/Table';
-
+import Button from "react-bootstrap/Button";
+import Table from "react-bootstrap/Table";
 
 export default function Tabela(props) {
   //peso do enem baseado em numero de questoes e poder de alavancagem das matérias
@@ -35,10 +34,9 @@ export default function Tabela(props) {
     prioridadeLing;
 
   //calculo blocos de 50min
-  var horas_minutos = props.tempoSemana * 60
-  var blocos_50min = horas_minutos / 50
-  
-  
+  var horas_minutos = props.tempoSemana * 60;
+  var blocos_50min = horas_minutos / 50;
+
   //calculo final de horas por matéria
   var tempoMat = prioridadeMat * (props.tempoSemana / prioridadeTotal);
   var tempoMatFinal = tempoMat.toFixed(2);
@@ -103,216 +101,224 @@ export default function Tabela(props) {
   //calculo de minutos Matematica - nao é minutos total
   var minutosMat = (segundosMat - 3600 * horasMatFinal) / 60;
   var minutosMatFinal = Math.round(minutosMat);
-  
+
   //calculo minutos total Matemática
-  var minutosMat2 = horasMat * 60
-  var blocosMat = minutosMat2 / 50
+  var minutosMat2 = horasMat * 60;
+  var blocosMat = minutosMat2 / 50;
 
   //calculo de minutos Biologia
   var minutosBio = (segundosBio - 3600 * horasBioFinal) / 60;
   var minutosBioFinal = Math.round(minutosBio);
 
   //calculo minutos total Biologia
-  var minutosBio2 = horasBio * 60
-  var blocosBio = minutosBio2 / 50
-
+  var minutosBio2 = horasBio * 60;
+  var blocosBio = minutosBio2 / 50;
 
   //calculo de minutos Quimica
   var minutosQuim = (segundosQuim - 3600 * horasQuimFinal) / 60;
   var minutosQuimFinal = Math.round(minutosQuim);
 
   //calculo minutos total Quimica
-  var minutosQuim2 = horasQuim * 60
-  var blocosQuim = minutosQuim2 / 50
-
+  var minutosQuim2 = horasQuim * 60;
+  var blocosQuim = minutosQuim2 / 50;
 
   //calculo de minutos Fisica
   var minutosFis = (segundosFis - 3600 * horasFisFinal) / 60;
   var minutosFisFinal = Math.round(minutosFis);
 
   //calculo minutos total Fisica
-  var minutosFis2 = horasFis * 60
-  var blocosFis = minutosFis2 / 50
-
+  var minutosFis2 = horasFis * 60;
+  var blocosFis = minutosFis2 / 50;
 
   //calculo de minutos Historia
   var minutosHis = (segundosHis - 3600 * horasHisFinal) / 60;
   var minutosHisFinal = Math.round(minutosHis);
 
   //calculo minutos total Historia
-  var minutosHis2 = horasHis * 60
-  var blocosHis = minutosHis2 / 50
+  var minutosHis2 = horasHis * 60;
+  var blocosHis = minutosHis2 / 50;
 
-  
   //calculo de minutos Geografia
   var minutosGeo = (segundosGeo - 3600 * horasGeoFinal) / 60;
   var minutosGeoFinal = Math.round(minutosGeo);
 
   //calculo minutos total Geografia
-  var minutosGeo2 = horasGeo * 60
-  var blocosGeo = minutosGeo2 / 50
+  var minutosGeo2 = horasGeo * 60;
+  var blocosGeo = minutosGeo2 / 50;
 
   //calculo de minutos Filosofia e Sociologia
   var minutosFs = (segundosFs - 3600 * horasFsFinal) / 60;
   var minutosFsFinal = Math.round(minutosFs);
 
   //calculo minutos total Filosofia e Sociologia
-  var minutosFs2 = horasFs * 60
-  var blocosFs = minutosFs2 / 50
-
+  var minutosFs2 = horasFs * 60;
+  var blocosFs = minutosFs2 / 50;
 
   //calculo de minutos Linguagens
   var minutosLing = (segundosLing - 3600 * horasLingFinal) / 60;
   var minutosLingFinal = Math.round(minutosLing);
 
   //calculo minutos total Linguagens
-  var minutosLing2 = horasLingFinal * 60
-  var blocosLing = minutosLing2 / 50
-
+  var minutosLing2 = horasLingFinal * 60;
+  var blocosLing = minutosLing2 / 50;
 
   return (
     <div>
       {props.click != null ? (
         <container>
           <div>
-            <Button variant="warning" onClick={(e) => location.reload()}>Recalcular</Button>
-          </div>
-          <div>
-            <Table responsive striped bordered hover >
+            <Table responsive striped bordered hover>
               <thead>
                 <tr>
                   <th>Matérias</th>
                   <th>Tempo de estudo semanal por matéria</th>
                 </tr>
-                </thead>
+              </thead>
 
-              <tbody><tr>
-                <td>Matemática</td><td>
-                  {horasMatFinal}h e {minutosMatFinal}m
-                </td></tr></tbody>
-             
-              <tr>
-                <th>Biologia</th>
-                <td>
-                  {horasBioFinal}h e {minutosBioFinal}m
-                </td>
-              </tr>
-              <tr>
-                <th>Química</th>
-                <td>
-                  {horasQuimFinal}h e {minutosQuimFinal}m
-                </td>
-              </tr>
-              <tr>
-                <th>Física</th>
-                <td>
-                  {horasFisFinal}h e {minutosFisFinal}m
-                </td>
-              </tr>
-              <tr>
-                <th>História</th>
-                <td>
-                  {horasHisFinal}h e {minutosHisFinal}m
-                </td>
-              </tr>
-              <tr>
-                <th>Geografia</th>
-                <td>
-                  {horasGeoFinal}h e {minutosGeoFinal}m
-                </td>
-              </tr>
-              <tr>
-                <th>Sociologia/Filosofia</th>
-                <td>
-                  {horasFsFinal}h e {minutosFsFinal}m
-                </td>
-              </tr>
-              <tr>
-                <th>Linguagens</th>
-                <td>
-                  {horasLingFinal}h e {minutosLingFinal}m
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>Matemática</td>
+                  <td>
+                    {horasMatFinal}h e {minutosMatFinal}m
+                  </td>
+                </tr>
+                <tr>
+                  <td>Biologia</td>
+                  <td>
+                    {horasBioFinal}h e {minutosBioFinal}m
+                  </td>
+                </tr>
+                <tr>
+                  <td>Química</td>
+                  <td>
+                    {horasQuimFinal}h e {minutosQuimFinal}m
+                  </td>
+                </tr>
+                <tr>
+                  <td>Física</td>
+                  <td>
+                    {horasFisFinal}h e {minutosFisFinal}m
+                  </td>
+                </tr>
+                <tr>
+                  <td>História</td>
+                  <td>
+                    {horasHisFinal}h e {minutosHisFinal}m
+                  </td>
+                </tr>
+                <tr>
+                  <td>Geografia</td>
+                  <td>
+                    {horasGeoFinal}h e {minutosGeoFinal}m
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sociologia/Filosofia</td>
+                  <td>
+                    {horasFsFinal}h e {minutosFsFinal}m
+                  </td>
+                </tr>
+                <tr>
+                  <td>Linguagens</td>
+                  <td>
+                    {horasLingFinal}h e {minutosLingFinal}m
+                  </td>
+                </tr>
+              </tbody>
             </Table>
           </div>
           <div>
-            <h2>número de Blocos de 50min de estudo: {Math.round(blocos_50min)}</h2>
-            <table>
-              <tr>
-                <td>&nbsp;</td>
-                <th>Seg</th>
-                <th>Ter</th>
-                <th>Qua</th>
-                <th>Qui</th>
-                <th>Sex</th>
-              </tr>
-              <tr>
-                <th>Matemática</th>
-                <th>{Math.round(blocosMat / 5)}</th>
-                <th>{Math.round(blocosMat / 5)}</th>
-                <th>{Math.round(blocosMat / 5)}</th>
-                <th>{Math.round(blocosMat / 5)}</th>
-                <th>{Math.round(blocosMat / 5)}</th>
-              </tr>
-              <tr>
-                <th>Biologia</th>
-                <th>{Math.round(blocosBio / 3)}</th>
-                <th>-</th>
-                <th>{Math.round(blocosBio / 3)}</th>
-                <th>-</th>
-                <th>{Math.round(blocosBio / 3)}</th>
+            <h2>Blocos de 50 minutos de estudo</h2>
+            <t>
+              "observe que o valor total de horas deu maior do que vc preencheu
+              inicialmente para poder ter um bloco com mínimo 50 minutos. "{" "}
+            </t>
+            <Table responsive striped bordered hover>
+              <thead>
+                <tr>
+                  <td>&nbsp;</td>
+                  <th>Seg</th>
+                  <th>Ter</th>
+                  <th>Qua</th>
+                  <th>Qui</th>
+                  <th>Sex</th>
+                </tr>
+              </thead>
 
-              </tr>
-              <tr>
-                <th>Química</th>
-                <th>{Math.round(blocosQuim / 3)}</th>
-                <th>-</th>
-                <th>{Math.round(blocosQuim / 3)}</th>
-                <th>-</th>
-                <th>{Math.round(blocosQuim / 3)}</th>
-              </tr>
-              <tr>
-                <th>Física</th>
-                <th>{Math.round(blocosFis / 3)}</th>
-                <th>-</th>
-                <th>{Math.round(blocosFis / 3)}</th>
-                <th>-</th>
-                <th>{Math.round(blocosFis / 3)}</th>
-              </tr>
-              <tr>
-                <th>História</th>
-                <th>-</th>
-                <th>{Math.ceil(blocosHis / 2)}</th>
-                <th>-</th>
-                <th>{Math.ceil(blocosHis / 2)}</th>
-                <th>-</th>
-              </tr>
-              <tr>
-                <th>Geografia</th>
-                <th>-</th>
-                <th>{Math.ceil(blocosGeo / 2)}</th>
-                <th>-</th>
-                <th>{Math.ceil(blocosGeo / 2)}</th>
-                <th>-</th>
-              </tr>
-              <tr>
-                <th>Fil/Soc</th>
-                <th>-</th>
-                <th>-</th>
-                <th>{Math.ceil(blocosFs)}</th>
-                <th>-</th>
-                <th>-</th>
-              </tr>
-              <tr>
-                <th>Linguagens</th>
-                <th>{Math.ceil(blocosLing / 3)}</th>
-                <th>-</th>
-                <th>{Math.ceil(blocosLing / 3)}</th>
-                <th>-</th>
-                <th>{Math.ceil(blocosLing / 3)}</th>
-              </tr>
-            </table>
+              <tbody>
+                <tr>
+                  <th>Matemática</th>
+                  <td>{Math.round(blocosMat / 5)}</td>
+                  <td>{Math.round(blocosMat / 5)}</td>
+                  <td>{Math.round(blocosMat / 5)}</td>
+                  <td>{Math.round(blocosMat / 5)}</td>
+                  <td>{Math.round(blocosMat / 5)}</td>
+                </tr>
+
+                <tr>
+                  <th>Biologia</th>
+                  <td>{Math.round(blocosBio / 3)}</td>
+                  <th>-</th>
+                  <td>{Math.round(blocosBio / 3)}</td>
+                  <th>-</th>
+                  <td>{Math.round(blocosBio / 3)}</td>
+                </tr>
+                <tr>
+                  <th>Química</th>
+                  <td>{Math.round(blocosQuim / 3)}</td>
+                  <th>-</th>
+                  <td>{Math.round(blocosQuim / 3)}</td>
+                  <td>-</td>
+                  <td>{Math.round(blocosQuim / 3)}</td>
+                </tr>
+                <tr>
+                  <th>Física</th>
+                  <td>{Math.round(blocosFis / 3)}</td>
+                  <td>-</td>
+                  <td>{Math.round(blocosFis / 3)}</td>
+                  <td>-</td>
+                  <td>{Math.round(blocosFis / 3)}</td>
+                </tr>
+                <tr>
+                  <th>História</th>
+                  <th>-</th>
+                  <td>{Math.ceil(blocosHis / 2)}</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>{Math.ceil(blocosHis / 2)}</td>
+                </tr>
+                <tr>
+                  <th>Geografia</th>
+                  <td>-</td>
+                  <td>{Math.ceil(blocosGeo / 2)}</td>
+                  <td>-</td>
+                  <td>{Math.ceil(blocosGeo / 2)}</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <th>Fil/Soc</th>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>{Math.ceil(blocosFs)}</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <th>Linguagens</th>
+                  <td>{Math.ceil(blocosLing / 3)}</td>
+                  <td>-</td>
+                  <td>{Math.ceil(blocosLing / 3)}</td>
+                  <td>-</td>
+                  <td>{Math.ceil(blocosLing / 3)}</td>
+                </tr>
+              </tbody>
+            </Table>
           </div>{" "}
+          <div>
+            <Button variant="warning" onClick={(e) => location.reload()}>
+              Recalcular
+            </Button>
+          </div>
         </container>
       ) : null}
     </div>
