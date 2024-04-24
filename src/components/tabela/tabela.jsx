@@ -1,3 +1,7 @@
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
+
+
 export default function Tabela(props) {
   //peso do enem baseado em numero de questoes e poder de alavancagem das matérias
   const pesoMat = parseFloat(0.75);
@@ -171,20 +175,22 @@ export default function Tabela(props) {
       {props.click != null ? (
         <container>
           <div>
-            <button onClick={(e) => location.reload()}>Recalcular</button>
+            <Button variant="warning" onClick={(e) => location.reload()}>Recalcular</Button>
           </div>
           <div>
-            <table>
-              <tr>
-                <td></td>
-                <th>Tempo de estudo semanal por matéria</th>
-              </tr>
-              <tr>
-                <th>Matemática</th>
-                <td>
+            <Table responsive striped bordered hover >
+              <thead>
+                <tr>
+                  <th>Matérias</th>
+                  <th>Tempo de estudo semanal por matéria</th>
+                </tr>
+                </thead>
+
+              <tbody><tr>
+                <td>Matemática</td><td>
                   {horasMatFinal}h e {minutosMatFinal}m
-                </td>
-              </tr>
+                </td></tr></tbody>
+             
               <tr>
                 <th>Biologia</th>
                 <td>
@@ -227,7 +233,7 @@ export default function Tabela(props) {
                   {horasLingFinal}h e {minutosLingFinal}m
                 </td>
               </tr>
-            </table>
+            </Table>
           </div>
           <div>
             <h2>número de Blocos de 50min de estudo: {Math.round(blocos_50min)}</h2>

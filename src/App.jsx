@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Tabela from "./components/tabela/tabela";
+import Button from 'react-bootstrap/Button';
 
 export default function App() {
   // Dificuldade por materia do aluno
@@ -89,7 +90,7 @@ export default function App() {
         <input onChange={(e) => setTempo(e.target.value)}></input>
       </div>
 
-      <div><button onClick={setClick}>Calcular</button></div>
+      <div><Button variant= "primary" onClick={setClick}>Calcular</Button></div>
 
       
 
