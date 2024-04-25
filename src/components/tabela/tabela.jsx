@@ -313,7 +313,7 @@ export default function Tabela(props) {
                 </tr>
               </tbody>
             </Table>
-          </div>{" "}
+          </div>
           <div>
             <Button variant="warning" onClick={(e) => location.reload()}>
               Recalcular

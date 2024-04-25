@@ -3,6 +3,7 @@ import Tabela from "./components/tabela/tabela";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import "./index.css";
 
 export default function App() {
   // Dificuldade por materia do aluno
@@ -23,7 +24,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Crie abaixo o seu cronograma de estudos para o Enem</h1>
+      <h1 class="title">Crie abaixo o seu cronograma de estudos para o Enem</h1>
       <p>
         Preencha os campos abaixo com o seu nível de dificuldade para cada
         matéria (preencha de 1 a 3 sendo 1 = Não tenho dificuldade, 2 = Tenho
@@ -118,7 +119,7 @@ export default function App() {
       </section>
 
       <div>
-        <h3>Quantas horas de estudo você possui por semana?</h3>
+        <h3 class="title-2">Quantas horas de estudo você possui por semana?</h3>
         <InputGroup className="mb-3">
           <InputGroup.Text
             as="textarea"
@@ -130,7 +131,7 @@ export default function App() {
         </InputGroup>
       </div>
 
-      <div>
+      <div class="button-calcular">
         <Button variant="primary" onClick={setClick}>
           Calcular
         </Button>
