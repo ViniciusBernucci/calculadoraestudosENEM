@@ -58,7 +58,7 @@ export default function App() {
           <option value="3">3</option>
         </Form.Select>
         <br></br>
-        Qímica
+        Química
         <Form.Select
           size="sm"
           arial-label=" Default select"
